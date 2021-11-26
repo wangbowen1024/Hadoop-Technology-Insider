@@ -4,11 +4,11 @@
 
 # Hadoop - HDFS
 
-## 一、Common
+## 一、Common 的实现
 
 ### 1.1 Hadoop 配置信息处理
 
-#### 1.1.1 配置简介
+**配置简介**
 
 配置文件格式：XML
 
@@ -38,21 +38,27 @@
 2. addResource() 方法添加需要加载的资源
 3. get\*/set\* 方法访问/设置配置项（资源会在第一次使用的时候加载到配置项，懒加载）
 
-#### 1.1.2 资源加载
+**资源加载**
 
-#### 1.1.3 访问/设置配置项
+**访问/设置配置项**
 
-#### 1.1.4 Configurable 接口
+**Configurable 接口**
 
 
 
 ### 1.2 序列化与压缩
 
+#### 1.2.1 序列化
+
+#### 1.2.2 压缩
+
 
 
 ### 1.3 Hadoop 远程过程调用
 
-#### 1.3.1 JAVA 动态代理
+#### 1.3.1 远程过程调用基础知识
+
+#### 1.3.2 Java 动态代理
 
 **代理接口**
 
@@ -116,11 +122,15 @@ public class DPInvocationHandler implements InvocationHandler {
 
 
 
-#### 1.3.2 NIO
+#### 1.3.3 Java NIO
 
-
+#### 1.3.4 Hadoop IPC
 
 
 
 ### 1.4 Hadoop 文件系统
+
+
+
+## 二、Hadoop 分布式文件系统（HDFS）
 
