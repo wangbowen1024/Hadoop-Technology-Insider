@@ -95,7 +95,8 @@ public class DPInvocationHandler implements InvocationHandler {
         // 增强操作
         System.out.println("开始判断");
 
-        // 利用了反射机制，相当于：dpsi.method(args)
+        // 调用转发。利用了反射机制，相当于：dpsi.method(args)
+        //
         Object result = method.invoke(dpsi, args);
 
         // 增强操作
@@ -112,6 +113,12 @@ public class DPInvocationHandler implements InvocationHandler {
 * 方法参数
 
 同时这里可以对原有方法进行增强功能（即在调用前后添加其他操作，可以是打印日志、也可以进行数据库操作等）
+
+
+
+#### 1.3.2 NIO
+
+
 
 
 

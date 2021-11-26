@@ -25,7 +25,9 @@ public class DPInvocationHandler implements InvocationHandler {
         // 增强操作
         System.out.println("开始判断");
 
-        // 利用了反射机制，相当于：dpsi.method(args)
+        // 调用转发。利用了反射机制，相当于：dpsi.method(args)
+        // 需要注意的是，如果接口有多个方法，对不同的的方法调用，最终都会调用 DPInvocationHandler.invoke() 方法，
+        // 通过 method 参数，可以在 invoke() 的处理过程中判断出是调用了哪个方法
         Object result = method.invoke(dpsi, args);
 
         // 增强操作

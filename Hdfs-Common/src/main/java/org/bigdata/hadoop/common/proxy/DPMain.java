@@ -16,7 +16,8 @@ public class DPMain {
     public static void main(String[] args) {
         // 创建代理
         DPQueryStatus dpQueryStatus = create(new DPQueryStatusImpl());
-        // 调用方法
+        // 调用方法（可以看到代理对象，只是实现了 DPQueryStatus 接口，可以调用接口的方法，就像调用一个普通的方法一样。
+        //          可以看到，最终这个方法调用，会调用 DPInvocationHandler.invoke() 方法，最终调用 DPQueryStatusImpl 的同名方法）
         boolean exist = dpQueryStatus.exist("abc.txt");
         System.out.println("Exist: " + exist);
     }
@@ -30,6 +31,7 @@ public class DPMain {
          Object proxyInstance = Proxy.newProxyInstance(dpsi.getClass().getClassLoader(),
                                                        new Class[]{DPQueryStatus.class},
                                                        new DPInvocationHandler(dpsi));
+         // 强转成代理接口
          return (DPQueryStatus) proxyInstance;
 
     }
